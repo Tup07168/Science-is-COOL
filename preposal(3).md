@@ -2,10 +2,10 @@
 
 ## What idea(s) do you have for your final project?
 
-I am planning on making an educational game using Gadot that teaches people about either first aide, various bugs, or foraging. 
+I am planning on making an educational game using Gadot that teaches people about either first aide, various bugs, or foraging. I would like to do this in the style of Stardew Valley if possible for my abilities. 
 If this idea does not work, I am thinking of making a Twitter bot that sends alerts or notifications when novel medical or scientific research is posted about. 
 However I am more inclined for making the game just because I think it is more fun and I think I have more ideas on how to get the game to work.
-
+If I am unable to do any of this, I will make a visual novel project that teaches about similar concepts as listed above.
 ## If you plan to collaborate with one or two classmates, what are their names?
 
 I do not plan to colaborate with another student.
