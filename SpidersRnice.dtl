@@ -1,0 +1,28 @@
+join Lucius (Normal) right
+Lucius: ...Hello
+Lucius: My... um.. 
+Lucius: My name is Lucius.
+Player: Hey there!
+Player: Wow, you really are big!
+Lucius: I understand I look… alarming.
+Lucius: But I only bite if I’m provoked—and even then, I’m not venomous to humans.
+Player: So no secret plan to terrorize everyone?
+Lucius: Goodness, no!
+Lucius: I don’t even spin webs, so there’s no mess to worry about.
+Lucius: Oh!
+Lucius: a-and I’m a solitary hunter.
+Lucius: I keep to myself.
+Lucius: I mostly eat pests: cockroaches, crickets… occasionally more dangerous spiders.
+Lucius: Brown recluses, for example.
+Lucius: Very venomous.
+Lucius: Quite unpleasant creatures.
+Lucius: And I gobble them right up!
+Player: So you’re basically...
+Player: a pest control ninja?
+Lucius: That’s one way to put it.
+Lucius: I do try to stay out of sight, but I suppose my size makes that difficult.
+Player: Yeah... that’s kind of the issue.
+Lucius: Well, I should be going. I prefer not to linger where I’m unwelcome.
+Lucius: ...Thank you for speaking with me.
+- Thank you for playing!
+	[signal arg="end_screen"]

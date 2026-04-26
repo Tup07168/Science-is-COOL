@@ -1,0 +1,20 @@
+join "Mama Spot" right
+Player: Ah! A giant lady bug!
+"Mama Spot": Well o’course dear! Though I ain’t really just a bug…
+Player: Huh?
+"Mama Spot": Why I’m a beetle o’course! And if ya see him you should really say hi to my nephew Tank.
+Player: I heard that spots on a lady bug can show their age.
+"Mama Spot": Now watchu tryin to say younin? Though I may be older that ain’t what my spots mean.
+"Mama Spot": It just differences in coloration on our shells and it varies from beetle to beetle.
+Player: Well why do you have spots?
+"Mama Spot": Well not all lady bugs have spots, I’m just blessed with a lot of em. That’s why they call me Mama Spot.
+Player: And why are you bright red?
+"Mama Spot": To ward off predators o’course.
+"Mama Spot": My red color tells anyone trying to take a bite of me that I’m bitter as a moldy biscuit.
+"Mama Spot": Oh and your granny particularly like me ‘round because I eat up all those pesky aphids in her garden.
+Player: That so cool Mama Spot!
+"Mama Spot": Well I best be off now, I spell with me feet and antenna and it certainly smells like trouble in town.
+"Mama Spot": Be a dear and check that out for me.
+Player: Alright! See you Mama Spot.
+- Go to town
+	[signal arg="change_scene_town"]

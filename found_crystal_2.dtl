@@ -1,0 +1,10 @@
+join Lucius (Jump_scare) center [animation="Instant In"]
+audio "res://assets/Music/Jumpscare_soundeffect.mp3"
+[wait time="1.0"]
+leave --All--
+BOO!
+Spooky crystal jumpscare!
+That's what happens when you don't listen to grandma.
+Weren't expecting that, huh?
+- Go to forest
+	[signal arg="change_scene_forest"]

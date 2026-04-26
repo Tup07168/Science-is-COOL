@@ -1,0 +1,27 @@
+join Garry (Angry) right
+Garry (Angry): IT’S NOT NORMAL!
+Garry (Angry): A spider that big? That’s a menace!
+Garry (Angry): And if we don’t stand together now, it’ll pick us off one by one!
+Player: Spiders are actually pretty helpful.
+Player: Maybe it’s not as dangerous as you think.
+Garry (Angry): Helpful? HELPFUL?
+Garry (Angry): That thing could carry off a goat!
+Garry (Angry): You’re wrong—completely wrong!
+Player: And who are you to decide that?
+Garry (Normal): Garry.
+Garry (Normal): Town guardsman.
+Garry (Normal): Sworn protector of this village.
+Garry (Angry): It’s my duty to keep people safe—even from things they don’t understand!
+Player: Alright...
+Player: Then let me talk to it.
+Garry (Normal): ...
+Garry (Angry): You want to WHAT?
+Player: Talk.
+Player: To the spider.
+Player: If it’s truly dangerous, we’ll know.
+Player: If not, maybe we avoid a pointless fight.
+Garry (Normal): That’s… that’s the worst idea I’ve ever heard.
+leave Garry
+Garry (Angry): If you get eaten, I’m writing in the report that this was entirely your fault!
+- Go talk to the spider
+	[signal arg="change_scene_spider"]

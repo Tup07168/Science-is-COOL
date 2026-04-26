@@ -1,0 +1,19 @@
+join Grandma (happy) right
+Grandma (happy): Good morning sweetie! How was your sleep?
+- I slept great Grandma!
+	Grandma (very happy): That is so wonderful to hear dear!
+	Grandma (happy): I have more good news!
+	Grandma (happy): I heard that lady bugs have been abundant in the forest.
+	Grandma (happy): I know how much you love bugs, and maybe they’ll even teach you something.
+- I'm still a little tired...
+	Grandma (normal): I’m so sorry to hear that dear.
+	Grandma (happy): Well, if it will cheer you up, I heard that lady bugs have been abundant in the forest.
+	Grandma (very happy): I know how much you love bugs, and maybe they’ll even teach you something.
+Player: Thanks Grandma! I’m going to go check that out!
+Grandma (happy): Anytime dear, have fun sweetie!
+leave Grandma
+Grandma: ...and make sure to be back by supper! I’m making your favorite stew!
+- Go to Forest
+	[signal arg="change_scene_forest"]
+- Go to Swamp
+	[signal arg="change_scene_crystal"]
