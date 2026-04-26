@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://w5bl0ofn8gx3"]
+
+[ext_resource type="Script" uid="uid://dpodwfc87jqit" path="res://scenes/crystal_1.gd" id="1_0v3s0"]
+[ext_resource type="Texture2D" uid="uid://die66n6bumop7" path="res://assets/backgrounds/forest-and-trees/dark swampy trees/8.png" id="1_u6la4"]
+[ext_resource type="Texture2D" uid="uid://ymjyp4au6kfn" path="res://assets/Icons/craftpix-net-106469-top-down-crystals-pixel-art/PNG/Assets_shadow/Violet_crystal3.png" id="2_0v3s0"]
+[ext_resource type="Texture2D" uid="uid://busw8vcc76wk8" path="res://assets/Icons/craftpix-net-106469-top-down-crystals-pixel-art/PNG/Assets/Violet_crystal2.png" id="3_g7ouo"]
+[ext_resource type="Texture2D" uid="uid://b2is1xjgyl8jq" path="res://assets/Icons/craftpix-net-106469-top-down-crystals-pixel-art/PNG/Assets/Violet_crystal1.png" id="4_cyrfg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vc0li"]
+distance = -322.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_78v8h"]
+normal = Vector2(0.99999326, -0.0036832164)
+distance = -572.59607
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8gljg"]
+normal = Vector2(-1, 0)
+distance = -571.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oqy4"]
+size = Vector2(22.604355, 20.776411)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrdbj"]
+size = Vector2(31.779747, 30.1546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f513w"]
+size = Vector2(38.553673, 36.824455)
+
+[node name="crystals 1" type="Node2D" unique_id=1565845964]
+script = ExtResource("1_0v3s0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=854692483]
+
+[node name="bakground" type="Area2D" parent="." unique_id=626348024]
+position = Vector2(-0.50001526, 1.5000153)
+scale = Vector2(1.9913194, 1.9969137)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bakground" unique_id=550779927]
+position = Vector2(0.25109744, -0.7511668)
+scale = Vector2(0.50217956, 0.5007728)
+shape = SubResource("WorldBoundaryShape2D_vc0li")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bakground" unique_id=196854802]
+position = Vector2(0.25109744, -0.7511668)
+scale = Vector2(0.50217956, 0.5007728)
+shape = SubResource("WorldBoundaryShape2D_78v8h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bakground" unique_id=1271155213]
+position = Vector2(0.25109744, -0.7511668)
+scale = Vector2(0.50217956, 0.5007728)
+shape = SubResource("WorldBoundaryShape2D_8gljg")
+
+[node name="Sprite2D" type="Sprite2D" parent="bakground" unique_id=1203719367]
+texture = ExtResource("1_u6la4")
+
+[node name="rock_small" type="Area2D" parent="." unique_id=82585792]
+position = Vector2(-0.50001526, 1.5000153)
+scale = Vector2(1.9913194, 1.9969137)
+
+[node name="rock_small_" type="Sprite2D" parent="rock_small" unique_id=1148461613]
+position = Vector2(-3.7314644, 140.70479)
+scale = Vector2(1.2218832, 1.1729137)
+texture = ExtResource("2_0v3s0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock_small" unique_id=1673249802]
+position = Vector2(-4.0174284, 146.1412)
+scale = Vector2(1.2218829, 1.1729136)
+shape = SubResource("RectangleShape2D_1oqy4")
+
+[node name="rock_small2" type="Area2D" parent="." unique_id=1993725204]
+
+[node name="rock_small2_" type="Sprite2D" parent="rock_small2" unique_id=636811944]
+position = Vector2(192.6119, 283.47806)
+scale = Vector2(1.7621286, 1.6399391)
+texture = ExtResource("3_g7ouo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock_small2" unique_id=572006765]
+position = Vector2(192.00002, 290.72586)
+scale = Vector2(1.7621279, 1.6399387)
+shape = SubResource("RectangleShape2D_wrdbj")
+
+[node name="rock_large" type="Area2D" parent="." unique_id=605421368]
+
+[node name="rock_large_" type="Sprite2D" parent="rock_large" unique_id=1023581245]
+position = Vector2(405.6389, 258.95062)
+scale = Vector2(2.3862848, 2.342207)
+texture = ExtResource("4_cyrfg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock_large" unique_id=2010335513]
+position = Vector2(409, 272.12524)
+scale = Vector2(2.3862844, 2.342207)
+shape = SubResource("RectangleShape2D_f513w")

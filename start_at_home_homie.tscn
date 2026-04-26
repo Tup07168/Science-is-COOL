@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dh467jn8531rs"]
+
+[ext_resource type="Texture2D" uid="uid://d12vktr60rd5s" path="res://assets/backgrounds/summer/PNG/house/Summer1.png" id="1_5wux5"]
+[ext_resource type="Script" uid="uid://ccpq4k025et47" path="res://scenes/start_at_home_homie.gd" id="1_sqhqs"]
+[ext_resource type="PackedScene" uid="uid://chcle2ys3irad" path="res://scenes/Lil Homie/lil_homie.tscn" id="2_cofid"]
+[ext_resource type="Script" uid="uid://cv2e3rdb0fb" path="res://scenes/lil_homie.gd" id="3_cofid"]
+[ext_resource type="PackedScene" uid="uid://dmjljaewft3ye" path="res://scenes/exit_button.tscn" id="4_86pgn"]
+[ext_resource type="PackedScene" uid="uid://bb6xtxvgpfkmr" path="res://scenes/Start_lady.tscn" id="6_2sobr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cofid"]
+normal = Vector2(-0.9997297, -0.023249527)
+distance = -158.58502
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_86pgn"]
+normal = Vector2(0.99973583, -0.022982433)
+distance = -134.94138
+
+[node name="Start_at_home_homie" type="Node2D" unique_id=1080488892]
+script = ExtResource("1_sqhqs")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=676872616]
+position = Vector2(12, -32)
+zoom = Vector2(4, 4)
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=127695925]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=316347971]
+position = Vector2(-2, 42)
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ground" unique_id=1172409940]
+shape = SubResource("WorldBoundaryShape2D_cofid")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ground" unique_id=973559741]
+shape = SubResource("WorldBoundaryShape2D_86pgn")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=298176028]
+z_index = -4096
+position = Vector2(11, -32)
+scale = Vector2(0.12543403, 0.12519287)
+texture = ExtResource("1_5wux5")
+
+[node name="Lil_Homie" parent="." unique_id=1949919336 instance=ExtResource("2_cofid")]
+position = Vector2(-77, 34)
+script = ExtResource("3_cofid")
+
+[node name="Control" type="Control" parent="." unique_id=494681923]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Exit" parent="Control" unique_id=1617921220 instance=ExtResource("4_86pgn")]
+layout_mode = 0
+offset_left = -131.0
+offset_top = -108.0
+offset_right = 87.0
+offset_bottom = 104.0
+
+[node name="Start_lady" parent="." unique_id=1968281632 instance=ExtResource("6_2sobr")]
+position = Vector2(47, -7)
+scale = Vector2(0.19582617, 0.1709787)
+
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]

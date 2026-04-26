@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dhrqd65rixj2t"]
+
+[ext_resource type="Script" uid="uid://c5fa4fk81fpnw" path="res://main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" path="res://assets/UI/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Buttons/play_unpress-Photoroom.png" id="2_oa1go"]
+[ext_resource type="Texture2D" path="res://assets/UI/craftpix-net-255216-free-basic-pixel-art-ui-for-rpg/PNG/Buttons/quit_unpress-Photoroom.png" id="4_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://bxd0abswxlhty" path="res://assets/backgrounds/summer/PNG/birch path/Summer6.png" id="6_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://cu41p6vcknvnu" path="res://assets/UI/MainMenu/Title-Photoroom.png" id="7_flqon"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ln24"]
+load_path = "res://.godot/imported/play_unpress-Photoroom.png-6900afb75d01503c47e89a433574fe9c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rtw2f"]
+load_path = "res://.godot/imported/play_press.png-860768dfeded7610e060257437407ffc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oa1go"]
+load_path = "res://.godot/imported/quit_unpress-Photoroom.png-dc7ee8e28b8defafce622057703ccab8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tbmy8"]
+load_path = "res://.godot/imported/quit_press-Photoroom.png-e20e8a089ea6f7f8fe72edfef4455af9.ctex"
+
+[node name="Main_menu" type="Node2D" unique_id=532538434]
+script = ExtResource("1_l6cm7")
+
+[node name="Button manager" type="Control" parent="." unique_id=1516877416]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="TextureButton" parent="Button manager" unique_id=879902232]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -345.0
+offset_right = 531.0
+offset_bottom = -126.0
+texture_normal = SubResource("CompressedTexture2D_8ln24")
+texture_pressed = SubResource("CompressedTexture2D_rtw2f")
+texture_hover = ExtResource("2_oa1go")
+texture_disabled = ExtResource("2_oa1go")
+texture_focused = ExtResource("2_oa1go")
+
+[node name="Quit" type="TextureButton" parent="Button manager" unique_id=1874638840]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 16.0
+offset_right = 532.0
+offset_bottom = 228.0
+texture_normal = SubResource("CompressedTexture2D_oa1go")
+texture_pressed = SubResource("CompressedTexture2D_tbmy8")
+texture_hover = ExtResource("4_jk1qb")
+texture_disabled = ExtResource("4_jk1qb")
+texture_focused = ExtResource("4_jk1qb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=970047398]
+position = Vector2(-6, -60)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1685409065]
+z_index = -4096
+position = Vector2(-1, -54.000004)
+scale = Vector2(0.50911456, 0.5154321)
+texture = ExtResource("6_lgwnu")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1029240547]
+position = Vector2(11.999999, -97.00001)
+rotation = -0.15705921
+scale = Vector2(0.6379448, 0.74547017)
+texture = ExtResource("7_flqon")
+
+[connection signal="pressed" from="Button manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button manager/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b0oyjvk4qxgbt"]
+
+[ext_resource type="Script" uid="uid://bxkshpn53i1h0" path="res://scenes/Lil Homie/ladybug_forest_homie.gd" id="1_6b4vu"]
+[ext_resource type="Texture2D" uid="uid://smvt8w1hplir" path="res://assets/backgrounds/forest-and-trees/Bright round trees/full background.png" id="2_sulri"]
+[ext_resource type="PackedScene" uid="uid://twpb3akhojyq" path="res://scenes/lady_bug.tscn" id="3_v8xiv"]
+[ext_resource type="PackedScene" uid="uid://chcle2ys3irad" path="res://scenes/Lil Homie/lil_homie.tscn" id="5_6b4vu"]
+[ext_resource type="PackedScene" uid="uid://dmjljaewft3ye" path="res://scenes/exit_button.tscn" id="5_lyv2t"]
+[ext_resource type="Script" uid="uid://cv2e3rdb0fb" path="res://scenes/lil_homie.gd" id="6_njrw6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7rsvs"]
+distance = -271.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j02fx"]
+normal = Vector2(-1, 0)
+distance = -572.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7352r"]
+normal = Vector2(1, 0)
+distance = -578.0
+
+[node name="Ladybug_Forest" type="Node2D" unique_id=123994467]
+script = ExtResource("1_6b4vu")
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=416598865]
+position = Vector2(-5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ground" unique_id=1203862122]
+position = Vector2(-2.4999695, 2)
+scale = Vector2(0.49956602, 0.49999997)
+texture = ExtResource("2_sulri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=986671551]
+position = Vector2(1, 3)
+scale = Vector2(7.633987, 0.98452026)
+shape = SubResource("WorldBoundaryShape2D_7rsvs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ground" unique_id=1614569506]
+shape = SubResource("WorldBoundaryShape2D_j02fx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ground" unique_id=634020820]
+z_index = 4096
+shape = SubResource("WorldBoundaryShape2D_7352r")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1812379537]
+position = Vector2(-7, 0)
+
+[node name="Lady Bug" parent="." unique_id=234058904 instance=ExtResource("3_v8xiv")]
+position = Vector2(241, 117)
+scale = Vector2(0.782726, 0.75996834)
+
+[node name="Exit" parent="." unique_id=1617921220 instance=ExtResource("5_lyv2t")]
+offset_left = 524.0
+offset_top = -315.0
+offset_right = 742.0
+offset_bottom = -103.0
+scale = Vector2(0.17810468, 0.16897914)
+
+[node name="Lil_Homie" parent="." unique_id=1949919336 instance=ExtResource("5_6b4vu")]
+position = Vector2(-429, 250)
+scale = Vector2(4.2439313, 4.0017715)
+script = ExtResource("6_njrw6")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

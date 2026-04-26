@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bey110j5occsr"]
+
+[ext_resource type="PackedScene" uid="uid://ckv84ts0rta6e" path="res://scenes/Dude Monster/dude_monster.tscn" id="1_1nr2o"]
+[ext_resource type="Script" uid="uid://4f3yrwem6ea3" path="res://scenes/start_at_home_dude.gd" id="1_fis74"]
+[ext_resource type="Texture2D" uid="uid://d12vktr60rd5s" path="res://assets/backgrounds/summer/PNG/house/Summer1.png" id="2_j0dpp"]
+[ext_resource type="PackedScene" uid="uid://dmjljaewft3ye" path="res://scenes/exit_button.tscn" id="3_j0dpp"]
+[ext_resource type="PackedScene" uid="uid://bb6xtxvgpfkmr" path="res://scenes/Start_lady.tscn" id="5_kif1w"]
+[ext_resource type="Script" uid="uid://ixycwobo0vpe" path="res://scenes/start_lady.gd" id="6_lv2y0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1nr2o"]
+normal = Vector2(-0.9999292, -0.011903918)
+distance = -157.965
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j0dpp"]
+normal = Vector2(0.99995714, -0.009258863)
+distance = -136.0
+
+[node name="Start_at_home_Dude" type="Node2D" unique_id=1080488892]
+script = ExtResource("1_fis74")
+
+[node name="Dude_Monster" parent="." unique_id=1818738295 instance=ExtResource("1_1nr2o")]
+position = Vector2(-64, 40)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=676872616]
+position = Vector2(12, -32)
+zoom = Vector2(4, 4)
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=127695925]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=316347971]
+position = Vector2(-2, 42)
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ground" unique_id=1382283045]
+shape = SubResource("WorldBoundaryShape2D_1nr2o")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ground" unique_id=1468569069]
+shape = SubResource("WorldBoundaryShape2D_j0dpp")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=298176028]
+z_index = -4096
+position = Vector2(11, -32)
+scale = Vector2(0.12543403, 0.12519287)
+texture = ExtResource("2_j0dpp")
+
+[node name="Control" type="Control" parent="." unique_id=1391188800]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Exit" parent="Control" unique_id=1617921220 instance=ExtResource("3_j0dpp")]
+layout_mode = 0
+offset_left = -132.0
+offset_top = -110.0
+offset_right = 86.0
+offset_bottom = 102.0
+
+[node name="Start_lady" parent="." unique_id=1968281632 instance=ExtResource("5_kif1w")]
+position = Vector2(63, 2)
+scale = Vector2(0.14733514, 0.13915326)
+script = ExtResource("6_lv2y0")
+
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]

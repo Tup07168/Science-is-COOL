@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dbfk0wi4cnshd"]
+
+[ext_resource type="Script" uid="uid://blexpaoxayl45" path="res://scenes/start_at_home_stink.gd" id="1_j2q56"]
+[ext_resource type="Texture2D" uid="uid://d12vktr60rd5s" path="res://assets/backgrounds/summer/PNG/house/Summer1.png" id="1_mwg5c"]
+[ext_resource type="PackedScene" uid="uid://diq2fn558j5l8" path="res://scenes/Stinka Butt/stinka_but.tscn" id="2_hxp2q"]
+[ext_resource type="Script" uid="uid://35sk5crdtrwe" path="res://scenes/stinka_but.gd" id="3_hxp2q"]
+[ext_resource type="PackedScene" uid="uid://dmjljaewft3ye" path="res://scenes/exit_button.tscn" id="4_3pr42"]
+[ext_resource type="PackedScene" uid="uid://bb6xtxvgpfkmr" path="res://scenes/Start_lady.tscn" id="6_53aj2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hxp2q"]
+normal = Vector2(-0.9998919, -0.014704292)
+distance = -158.79164
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3pr42"]
+normal = Vector2(0.99993396, -0.011493494)
+distance = -136.19789
+
+[node name="Start_at_home_stink" type="Node2D" unique_id=1080488892]
+script = ExtResource("1_j2q56")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=676872616]
+position = Vector2(12, -32)
+zoom = Vector2(4, 4)
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=127695925]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=316347971]
+position = Vector2(-2, 42)
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ground" unique_id=1559499398]
+shape = SubResource("WorldBoundaryShape2D_hxp2q")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ground" unique_id=1011535775]
+shape = SubResource("WorldBoundaryShape2D_3pr42")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=298176028]
+z_index = -4096
+position = Vector2(11, -32)
+scale = Vector2(0.12543403, 0.12519287)
+texture = ExtResource("1_mwg5c")
+
+[node name="Stinka_But" parent="." unique_id=2090838370 instance=ExtResource("2_hxp2q")]
+position = Vector2(-68, 38)
+script = ExtResource("3_hxp2q")
+
+[node name="Control" type="Control" parent="." unique_id=635175789]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Exit" parent="Control" unique_id=1617921220 instance=ExtResource("4_3pr42")]
+layout_mode = 0
+offset_left = -130.0
+offset_top = -108.0
+offset_right = 88.0
+offset_bottom = 104.0
+
+[node name="Start_lady" parent="." unique_id=1968281632 instance=ExtResource("6_53aj2")]
+position = Vector2(56, -8)
+scale = Vector2(0.20880635, 0.1730674)
+
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dmjljaewft3ye"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4yo1s"]
+load_path = "res://.godot/imported/quit_unpress-Photoroom.png-dc7ee8e28b8defafce622057703ccab8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kx0dl"]
+load_path = "res://.godot/imported/quit_press-Photoroom.png-e20e8a089ea6f7f8fe72edfef4455af9.ctex"
+
+[node name="Exit" type="TextureButton" unique_id=1617921220]
+offset_left = 137.0
+offset_top = -109.0
+offset_right = 355.0
+offset_bottom = 103.0
+scale = Vector2(0.067200944, 0.06552036)
+texture_normal = SubResource("CompressedTexture2D_4yo1s")
+texture_pressed = SubResource("CompressedTexture2D_kx0dl")

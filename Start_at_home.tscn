@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://pki1mf1gvipo"]
+
+[ext_resource type="Texture2D" uid="uid://d4ai6qnqjd32y" path="res://assets/backgrounds/summer/PNG/house/Blur_Summer1.png" id="1_ll52t"]
+[ext_resource type="Script" uid="uid://vsxe3mitijfb" path="res://scenes/start_at_home.gd" id="1_orl2k"]
+[ext_resource type="Texture2D" uid="uid://cfkmsnih7nm0y" path="res://assets/Text fonts/choose character-Photoroom.png" id="3_hhrn6"]
+[ext_resource type="PackedScene" uid="uid://dmjljaewft3ye" path="res://scenes/exit_button.tscn" id="4_tm3jo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_orl2k"]
+load_path = "res://.godot/imported/Dude_Monster.png-bbab8568418a32b526eb41ac1a7da60b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hhrn6"]
+load_path = "res://.godot/imported/Dude_Monster.png-bbab8568418a32b526eb41ac1a7da60b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tm3jo"]
+load_path = "res://.godot/imported/Owlet_Monster.png-cd2020665b3487abb0a1d06172094761.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qbc7q"]
+load_path = "res://.godot/imported/Owlet_Monster.png-cd2020665b3487abb0a1d06172094761.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l47mg"]
+load_path = "res://.godot/imported/Pink_Monster.png-dee370549a03179c0cd784ffb0f33f35.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bcske"]
+load_path = "res://.godot/imported/Pink_Monster.png-dee370549a03179c0cd784ffb0f33f35.ctex"
+
+[node name="Start_at_home_pick" type="Node2D" unique_id=1080488892]
+script = ExtResource("1_orl2k")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=676872616]
+position = Vector2(12, -32)
+zoom = Vector2(4, 4)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=298176028]
+z_index = -4096
+position = Vector2(11, -33)
+scale = Vector2(0.12543403, 0.12519287)
+texture = ExtResource("1_ll52t")
+
+[node name="Text" type="Sprite2D" parent="." unique_id=1698874404]
+position = Vector2(11, -74)
+scale = Vector2(0.41137126, 0.41463426)
+texture = ExtResource("3_hhrn6")
+
+[node name="character manager" type="Control" parent="." unique_id=328397540]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dude" type="TextureButton" parent="character manager" unique_id=501596216]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = -56.000004
+offset_right = -119.0
+offset_bottom = -16.000004
+grow_horizontal = 2
+scale = Vector2(1.8064517, 1.7393162)
+texture_normal = SubResource("CompressedTexture2D_orl2k")
+texture_pressed = SubResource("CompressedTexture2D_hhrn6")
+
+[node name="Homie" type="TextureButton" parent="character manager" unique_id=2133015013]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -62.0
+offset_right = 10.0
+offset_bottom = -22.0
+scale = Vector2(1.7240853, 1.9039266)
+texture_normal = SubResource("CompressedTexture2D_tm3jo")
+texture_pressed = SubResource("CompressedTexture2D_qbc7q")
+
+[node name="stink" type="TextureButton" parent="character manager" unique_id=1423122726]
+layout_mode = 0
+offset_left = 58.0
+offset_top = -57.0
+offset_right = 90.0
+offset_bottom = -17.0
+scale = Vector2(1.885, 1.7612902)
+texture_normal = SubResource("CompressedTexture2D_l47mg")
+texture_pressed = SubResource("CompressedTexture2D_bcske")
+
+[node name="Exit" parent="character manager" unique_id=1617921220 instance=ExtResource("4_tm3jo")]
+layout_mode = 0
+offset_left = -131.0
+offset_top = -112.0
+offset_right = 87.0
+offset_bottom = 100.0
+
+[connection signal="pressed" from="character manager/Dude" to="." method="_on_dude_pressed"]
+[connection signal="pressed" from="character manager/Homie" to="." method="_on_homie_pressed"]
+[connection signal="pressed" from="character manager/stink" to="." method="_on_stink_pressed"]
+[connection signal="pressed" from="character manager/Exit" to="." method="_on_exit_pressed"]
